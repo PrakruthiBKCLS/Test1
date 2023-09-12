@@ -1,0 +1,43 @@
+
+1) Q2Config:- 
+
+
+Details:-
+Preview link: 
+Old Value: 
+New value: 
+Draft name:
+key: 
+
+
+2) Update Query
+
+begin tran
+
+select * from Q2_ProductAndType where ProductId = 1287
+
+update Q2_ProductAndType 
+set HostProductTypeCode= 'S'
+where ProductId = 1287
+
+select * from Q2_ProductAndType where ProductId = 1287
+
+--rollback
+--commit
+
+
+
+3) Insert Query:-
+
+begin tran
+
+SELECT * FROM Q2_Product where ProductTypeId = '17'
+
+insert into Q2_Product (HostProductCode,ProductName,TimeCodeGroupId,ProductTypeId,VoiceFile,ProductNickName,HydraProductCode,VendorID,AllowOpen,AllowClose)
+values ('267','Mortage 35','1','17',NULL,NULL,'5',NULL,'0','0')
+
+SELECT * FROM Q2_Product where ProductTypeId = '17'
+--The above 1 inserted record will be added to the existing records
+
+--rollback
+--commit
